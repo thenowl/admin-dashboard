@@ -271,8 +271,8 @@ header .user-info .fa-bell:active {
   border-radius: 50%;
 
   position: absolute;
-  top: -6px;
-  right: -6px;
+  top: -10px;
+  right: -8px;
 }
 
 header .user-info .user img {
@@ -292,19 +292,27 @@ header .user-info .user {
 }
 
 header .greeting {
-  display: flex;
+  display: grid;
+  grid-template: 1fr / 1fr 10fr;
   align-items: center;
   gap: 20px;
+
+  align-items: center;
 }
 
 header .greeting .profile-picture-container img {
+  min-width: 40px;
   width: 80px;
   height: auto;
   border-radius: 100%;
 }
 
+header .greeting .greeting-text p {
+  font-size: clamp(0.9rem, 0.8vw, 1.3rem);
+}
+
 header .greeting .greeting-text h2 {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 1.2vw, 2rem);
 }
 
 header .function-buttons {
@@ -327,8 +335,7 @@ header .function-buttons button {
     rgba(46, 16, 101, 0.2),
     rgb(46, 16, 101)
   );
-  padding: 5px 30px;
-  min-width: 60px;
+  padding: 5px 40px;
   border: none;
   border-radius: 20px;
   box-shadow: 5px 5px 10px rgba(17, 17, 17, 0.3);
@@ -336,10 +343,6 @@ header .function-buttons button {
   flex-shrink: 0;
 
   cursor: pointer;
-}
-
-.header .function-buttons button p {
-  white-space: nowrap;
 }
 
 header .function-buttons button:hover {
@@ -468,7 +471,7 @@ ul li:active {
   border-radius: 50%;
 
   position: absolute;
-  top: -8px;
+  top: -10px;
   right: -8px;
 }
 
