@@ -1,3 +1,129 @@
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 900;
+  src: url(../fonts/Poppins-Black.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 900;
+  src: url(../fonts/Poppins-BlackItalic.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 700;
+  src: url(../fonts/Poppins-BoldItalic.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  src: url(../fonts/Poppins-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 800;
+  src: url(../fonts/Poppins-ExtraBoldItalic.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 200;
+  src: url(../fonts/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 200;
+  src: url(../fonts/Poppins-ExtraLightItalic.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/Poppins-Italic.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Poppins-Light.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 300;
+  src: url(../fonts/Poppins-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  src: url(../fonts/Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 500;
+  src: url(../fonts/Poppins-MediumItalic.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: url(../fonts/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 600;
+  src: url(../fonts/Poppins-SemiBoldItalic.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 100;
+  src: url(../fonts/Poppins-Thin.ttf);
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 100;
+  src: url(../fonts/Poppins-ThinItalic.ttf);
+}
+
 /* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
@@ -55,16 +181,461 @@ h6 {
 
 /* ACTUAL CSS */
 
+:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  color: whitesmoke;
+  background: rgb(46, 16, 101);
+}
+
 .container {
+  font-family: "Poppins", sans-serif;
+  color: rgb(46, 16, 101);
+  background: #ddd;
+  height: 100vh;
   display: grid;
 
-  grid-template: 1fr 5fr / 1fr 5fr;
+  grid-template: 1fr 6fr 1fr/ 1fr 6fr;
 }
 
 header {
+  background: linear-gradient(to right, rgba(46, 16, 101, 0), rgb(99, 7, 100));
+  padding: 20px 40px;
   grid-column: 2 / 3;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  gap: 10px 0;
+  align-items: center;
+}
+
+header .search-bar-container input {
+  font-size: 1.1rem;
+  background: #ddd;
+  width: 90%;
+  height: 2.5rem;
+  padding: 0 20px;
+  border: 2px solid rgb(99, 7, 100);
+  border-radius: 2rem;
+  box-shadow: inset 3px 3px 5px rgba(17, 17, 17, 0.4);
+}
+
+.search-bar-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search-bar-container button .fa-magnifying-glass {
+  font-size: 1.5rem;
+  margin-right: 5px;
+}
+
+header .user-info {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 80px;
+
+  margin-right: 40px;
+}
+
+header .user-info .fa-bell {
+  color: #000;
+  font-size: 1.6rem;
+  filter: drop-shadow(5px 5px 10px rgba(17, 17, 17, 0.8));
+
+  position: relative;
+
+  cursor: pointer;
+}
+
+header .user-info .fa-bell:hover {
+  scale: 1.2;
+}
+
+header .user-info .fa-bell:active {
+  scale: 0.9;
+  filter: none;
+}
+
+.fa-bell::after {
+  content: "7";
+  font-size: 0.7rem;
+  color: whitesmoke;
+  background: red;
+  padding: 4px 5px;
+  border: none;
+  border-radius: 50%;
+
+  position: absolute;
+  top: -6px;
+  right: -6px;
+}
+
+header .user-info .user img {
+  width: 50px;
+  height: auto;
+  border-radius: 100%;
+}
+
+header .user-info .user {
+  color: #000;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  cursor: pointer;
+}
+
+header .greeting {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header .greeting .profile-picture-container img {
+  width: 80px;
+  height: auto;
+  border-radius: 100%;
+}
+
+header .greeting .greeting-text h2 {
+  font-size: 1.5rem;
+}
+
+header .function-buttons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 40px;
+
+  margin-right: 40px;
+}
+
+header .function-buttons button {
+  font-size: 0.8rem;
+  font-weight: bolder;
+  text-align: center;
+  color: whitesmoke;
+  background: linear-gradient(
+    to right bottom,
+    rgb(46, 16, 101),
+    rgba(46, 16, 101, 0.2),
+    rgb(46, 16, 101)
+  );
+  padding: 5px 30px;
+  min-width: 60px;
+  border: none;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(17, 17, 17, 0.3);
+  transition-duration: 100ms;
+  flex-shrink: 0;
+
+  cursor: pointer;
+}
+
+.header .function-buttons button p {
+  white-space: nowrap;
+}
+
+header .function-buttons button:hover {
+  scale: 1.05;
+  color: rgb(46, 16, 101);
+  background: whitesmoke;
+  box-shadow: 8px 8px 15px rgba(17, 17, 17, 0.6);
+}
+
+header .function-buttons button:active {
+  scale: 1;
+  color: whitesmoke;
+  background: rgb(46, 16, 101);
+  box-shadow: none;
+}
+
+header .function-buttons .new-project,
+header .function-buttons .upload-project,
+header .function-buttons .share-project {
+  position: relative;
+}
+
+header .function-buttons .new-project img {
+  position: absolute;
+  top: -60%;
+  left: 0;
+}
+
+header .function-buttons .upload-project i,
+header .function-buttons .share-project i {
+  font-size: 1.5rem;
+  color: #000;
+
+  position: absolute;
+  top: 5%;
+  left: 0;
+}
+
+header .function-buttons .share-project .fa-share-nodes {
+  transform: rotate(180deg);
 }
 
 nav {
-  grid-row: 1 / 3;
+  grid-row: 1 / 4;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(46, 16, 101, 0) 0%,
+    rgba(46, 16, 101, 0) 20%,
+    rgb(99, 7, 100) 100%
+  );
+  padding: clamp(10px, 1vw, 20px);
+  display: grid;
+  grid-auto-rows: max-content;
+  gap: 80px;
+}
+
+nav .logo {
+  position: relative;
+  transition-duration: 100ms;
+}
+
+nav .logo img {
+  width: 80%;
+  height: auto;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 1));
+}
+
+nav .logo h1 {
+  font-size: clamp(1rem, 1.2vw, 2rem);
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 60%;
+  left: 45%;
+}
+
+nav .logo p {
+  font-size: clamp(0.8rem, 0.7vw, 1rem);
+  text-align: center;
+}
+
+nav .logo:hover {
+  scale: 1.05;
+}
+
+nav .logo:hover h1 {
+  color: rgb(99, 7, 100);
+}
+
+ul {
+  font-size: clamp(1rem, 1vw, 1.5rem);
+  color: black;
+  opacity: 0.9;
+  list-style: none;
+  display: grid;
+  gap: 20px;
+}
+
+ul li {
+  cursor: pointer;
+}
+
+ul li:hover {
+  scale: 1.1;
+  opacity: 1;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+ul li:active {
+  scale: 1;
+  opacity: 1;
+  text-shadow: none;
+}
+
+.fa-message {
+  position: relative;
+}
+
+.fa-message::after {
+  content: "4";
+  font-size: 0.7rem;
+  color: whitesmoke;
+  background: red;
+  padding: 4px 5px;
+  border: none;
+  border-radius: 50%;
+
+  position: absolute;
+  top: -8px;
+  right: -8px;
+}
+
+main {
+  min-height: 0;
+  padding: 40px;
+  display: grid;
+  grid-template: repeat(2, 1fr 10fr) / 3fr 1fr;
+  gap: 20px 40px;
+
+  overflow: auto;
+}
+
+.projects {
+  grid-row: 2 / 5;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(auto-fit, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: whitesmoke;
+  height: 300px;
+  padding: 20px 30px;
+
+  border: 2px solid rgb(46, 16, 101);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px rgba(17, 17, 17, 0.3);
+  transition-duration: 100ms;
+  cursor: pointer;
+
+  position: relative;
+}
+
+.project-card .project-text {
+  display: grid;
+  grid-template: 1fr 6fr / 1fr;
+  gap: 20px;
+}
+
+.project-card .project-text .play-content {
+  background: #000;
+  width: 80%;
+  height: 80%;
+  border-radius: 1rem;
+
+  justify-self: center;
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.project-card .project-text .play-content i {
+  font-size: 4rem;
+  color: whitesmoke;
+  opacity: 0.6;
+}
+
+.project-card:hover {
+  scale: 1.01;
+  box-shadow: 10px 10px 20px rgba(17, 17, 17, 0.6);
+  z-index: 1;
+}
+
+.project-card:active {
+  scale: 1;
+  box-shadow: none;
+  z-index: 0;
+}
+
+.project-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.project-icons p {
+  font-size: 0.8rem;
+  text-align: center;
+  color: whitesmoke;
+  background: linear-gradient(
+    to right bottom,
+    rgb(46, 16, 101),
+    rgba(46, 16, 101, 0.75),
+    rgb(46, 16, 101)
+  );
+  padding: 5px 15px;
+  min-width: 60px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgba(17, 17, 17, 0.3);
+
+  user-select: none;
+}
+
+.announcement-container,
+.trending-container {
+  background: whitesmoke;
+  padding: 20px 30px;
+  border: 2px solid rgb(46, 16, 101);
+  border-radius: 1rem;
+  box-shadow: 5px 5px 10px rgba(17, 17, 17, 0.3);
+
+  display: grid;
+}
+
+.announcement-container span::after {
+  justify-self: center;
+  display: block;
+
+  content: "";
+  width: 90%;
+  border: 1px solid rgba(51, 51, 51, 0.3);
+}
+
+.announcement-container span:last-child::after {
+  display: none;
+}
+
+.announcement-container .announcement {
+  line-height: 2;
+  cursor: pointer;
+}
+
+.announcement-container .announcement:hover {
+  opacity: 0.6;
+}
+
+.trending-container .trending-profile {
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+
+  cursor: pointer;
+}
+
+.trending-container .trending-profile:hover {
+  scale: 1.05;
+  filter: drop-shadow(5px 5px 10px rgba(17, 17, 17, 0.4));
+}
+
+.trending-container .trending-profile .trending-profile-picture img {
+  height: 50px;
+  width: 50px;
+  object-fit: cover;
+  border-radius: 100%;
+}
+
+footer {
+  background: linear-gradient(
+    to right,
+    rgb(99, 7, 100) 0%,
+    rgb(99, 7, 100) 20%,
+    rgba(46, 16, 101, 0)
+  );
+  color: whitesmoke;
+  font-size: 0.9rem;
+  text-align: center;
+
+  align-self: end;
+
+  padding: 8px;
+}
+
+footer a:hover {
+  color: rgb(46, 16, 101);
+  text-decoration: underline;
 }

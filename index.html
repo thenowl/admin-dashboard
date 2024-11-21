@@ -6,140 +6,279 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
   <link rel="stylesheet" href="./css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
   <div class="container">
     <header>
-      <div class="search-bar-container">
-        <input type="search" name="search-bar" id="search-bar">
-      </div>
+      <form class="search-bar-container">
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <input type="search" name="search-bar" id="search-bar" placeholder="Search...">
+      </form>
       <div class="user-info">
-        <img src="" alt="">
-        <p>USER NAME</p>
+        <i class="fa-solid fa-bell"></i>
+        <div class="user">
+          <img src="./img/NightOwl - Profile Picture.jpg" alt="Profile Picture" width="50" height="50">
+          <h3>thenowl</h3>
+        </div>
       </div>
       <div class="greeting">
         <div class="profile-picture-container">
-          <img src="" alt="">
+          <img src="./img/NightOwl - Profile Picture.jpg" alt="Profile Picture" width="80" height="80">
         </div>
         <div class="greeting-text">
           <p>Hi there,</p>
-          <h2>USER NAME</h2>
+          <h2>thenowl</h2>
         </div>
-        <div class="function-buttons">
-          <button>New Project</button>
-          <button>Upload Project</button>
-          <button>Share Project</button>
-        </div>
+      </div>
+      <div class="function-buttons">
+        <button class="new-project">
+          <img src="./img/treble clef.svg" alt="treble clef" width="20">
+          <p>New Project</p>
+        </button>
+        <button class="upload-project">
+          <i class="fa-regular fa-folder-open"></i>
+          <p>Upload Project</p>
+        </button>
+        <button class="share-project">
+          <i class="fa-solid fa-share-nodes"></i>
+          <p>Share Project</p>
+        </button>
       </div>
     </header>
 
     <nav>
       <div class="logo">
-        <img src="./img/Agile - Logo.svg" alt="Agile Logo">
+        <a href="#">
+          <img src="./img/Agile - Logo.svg" alt="Agile Logo">
+          <h1>Dashboard</h1>
+          <p>Writing music faster</p>
+        </a>
       </div>
       <div class="profile-navigation">
         <ul>
-          <li><a href="">Home</a></li>
-          <li><a href="">Profile</a></li>
-          <li><a href="">Messages</a></li>
-          <li><a href="">History</a></li>
-          <li><a href="">Tasks</a></li>
-          <li><a href="">Communities</a></li>
+          <li>
+            <a href="">
+              <i class="fa-solid fa-house"></i>
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa-solid fa-user"></i>
+              Profile
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa-solid fa-message"></i>
+              Messages
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              History
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa-solid fa-list-check"></i>
+              Tasks
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa-solid fa-people-group"></i>
+              Communities
+            </a>
+          </li>
         </ul>
       </div>
       <div class="settings">
         <ul>
-          <li><a href="">Settings</a></li>
-          <li><a href="">Support</a></li>
-          <li><a href="">Privacy</a></li>
+          <li>
+            <a href="">
+              <i class="fa-solid fa-gear"></i>
+              Settings
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa-solid fa-circle-question"></i>
+              Support
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <i class="fa-solid fa-shield-halved"></i>
+              Privacy
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
 
     <main>
-      <h2>Your Projects</h2>
+      <h2 class="your-projects">Your Projects</h2>
       <div class="projects">
         <div class="project-card">
           <div class="project-text">
-            <h3>Project Name</h3>
-            <p></p>
+            <h3>To The Shores</h3>
+            <div class="play-content">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
           </div>
-          <div class="project-icons"></div>
+          <div class="project-icons">
+            <p>Concert Band</p>
+            <p>C# major</p>
+            <p>2/4</p>
+            <p>A4</p>
+          </div>
         </div>
         <div class="project-card">
           <div class="project-text">
-            <h3>Project Name</h3>
-            <p></p>
+            <h3>The Fairy's Dance</h3>
+            <div class="play-content">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
           </div>
-          <div class="project-icons"></div>
+          <div class="project-icons">
+            <p>Film Orchestra</p>
+            <p>D minor</p>
+            <p>6/8</p>
+            <p>A3</p>
+          </div>
         </div>
         <div class="project-card">
           <div class="project-text">
-            <h3>Project Name</h3>
-            <p></p>
+            <h3>Symphonic Suite N<sup>o</sup>4 in F minor</h3>
+            <div class="play-content">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
           </div>
-          <div class="project-icons"></div>
+          <div class="project-icons">
+            <p>Romantic Orchestra</p>
+            <p>F minor</p>
+            <p>4/4</p>
+            <p>A3</p>
+          </div>
         </div>
         <div class="project-card">
           <div class="project-text">
-            <h3>Project Name</h3>
-            <p></p>
+            <h3>The Golden Shine Of Yesteryears</h3>
+            <div class="play-content">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
           </div>
-          <div class="project-icons"></div>
+          <div class="project-icons">
+            <p>Big Band</p>
+            <p>Bb major</p>
+            <p>4/4</p>
+            <p>A4</p>
+          </div>
         </div>
         <div class="project-card">
           <div class="project-text">
-            <h3>Project Name</h3>
-            <p></p>
+            <h3>Canon Ball</h3>
+            <div class="play-content">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
           </div>
-          <div class="project-icons"></div>
+          <div class="project-icons">
+            <p>Rock Band</p>
+            <p>E minor</p>
+            <p>4/4</p>
+            <p>A4</p>
+          </div>
         </div>
         <div class="project-card">
           <div class="project-text">
-            <h3>Project Name</h3>
-            <p></p>
+            <h3>Moon Pulse</h3>
+            <div class="play-content">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
           </div>
-          <div class="project-icons"></div>
+          <div class="project-icons">
+            <p>Modern Orchestra</p>
+            <p>atonal</p>
+            <p>7/8 + 9/8</p>
+            <p>A3</p>
+          </div>
         </div>
       </div>
 
       <h2>Announcements</h2>
       <div class="announcement-container">
         <div class="announcement">
-          <h3>Announcement Title</h3>
-          <p></p>
+          <h3>Site Maintenance</h3>
+          <details>
+            <summary>Our website will undergo scheduled maintenance on Monday 11/25/2024 from 8:00am to 9:00am.
+            </summary> During this
+            period, you may experience temporary disruptions. We apologize for any inconvenience and appreciate your
+            understanding.
+          </details>
         </div>
+        <span></span>
         <div class="announcement">
-          <h3>Announcement Title</h3>
-          <p></p>
+          <h3>Updated Privacy Policy</h3>
+          <p>Visit your privacy settings to find out more.</p>
         </div>
+        <span></span>
         <div class="announcement">
-          <h3>Announcement Title</h3>
-          <p></p>
+          <h3>New Templates Added</h3>
+          <p>We added new templates to the set-up menu.</p>
         </div>
+        <span></span>
       </div>
 
-      <h2>Trending</h2>
+      <h2>Latest Projects</h2>
       <div class="trending-container">
         <div class="trending-profile">
-          <div class="trending-profile-picture"></div>
-          <div class="trending-profile-text"></div>
+          <div class="trending-profile-picture">
+            <img src="./img/man-1281562_640.jpg" alt="Profile Picture" height="50">
+          </div>
+          <div class="trending-profile-text">
+            <p>Sam Whaly</p>
+            <p>Modular Skepsis</p>
+          </div>
         </div>
         <div class="trending-profile">
-          <div class="trending-profile-picture"></div>
-          <div class="trending-profile-text"></div>
+          <div class="trending-profile-picture">
+            <img src="./img/NightOwl - Profile Picture.jpg" alt="Profile Picture" height="50">
+          </div>
+          <div class="trending-profile-text">
+            <p>thenowl</p>
+            <p>To The Shores</p>
+          </div>
         </div>
         <div class="trending-profile">
-          <div class="trending-profile-picture"></div>
-          <div class="trending-profile-text"></div>
+          <div class="trending-profile-picture">
+            <img src="./img/woman-6244548_640.jpg" alt="Profile Picture" height="50">
+          </div>
+          <div class="trending-profile-text">
+            <p>Anné Curié</p>
+            <p>La danse des fleures</p>
+          </div>
         </div>
         <div class="trending-profile">
-          <div class="trending-profile-picture"></div>
-          <div class="trending-profile-text"></div>
+          <div class="trending-profile-picture">
+            <img src="./img/woman-6274879_640.png" alt="Profile Picture" height="50">
+          </div>
+          <div class="trending-profile-text">
+            <p>Sarah McKay</p>
+            <p>Trails in the wind</p>
+          </div>
         </div>
       </div>
     </main>
+    <footer>
+      <p>Copyright &copy; thenowl 2024</p>
+      <p>Photos from <a href="https://pixabay.com/" target="_blank">pixabay</a></p>
+    </footer>
   </div>
 </body>
 
