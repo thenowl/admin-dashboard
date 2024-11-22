@@ -181,20 +181,29 @@ h6 {
 
 /* ACTUAL CSS */
 
+:root {
+  /* COLORS */
+  --primary-color: rgb(46, 16, 101);
+  --primary-color-contrast: rgba(460, 16, 101, 0);
+  --primary-color-light: rgb(99, 7, 100);
+  --secondary-color: whitesmoke;
+  --bg-color: rgb(221, 221, 221);
+}
+
 :any-link {
   color: inherit;
   text-decoration: none;
 }
 
 ::selection {
-  color: whitesmoke;
-  background: rgb(46, 16, 101);
+  color: var(--secondary-color);
+  background: var(--primary-color);
 }
 
 .container {
   font-family: "Poppins", sans-serif;
-  color: rgb(46, 16, 101);
-  background: #ddd;
+  color: var(--primary-color);
+  background: var(--bg-color);
   height: 100vh;
   display: grid;
 
@@ -202,22 +211,29 @@ h6 {
 }
 
 header {
-  background: linear-gradient(to right, rgba(46, 16, 101, 0), rgb(99, 7, 100));
+  background: linear-gradient(
+    to right,
+    var(--primary-color-contrast),
+    var(--primary-color-light)
+  );
   padding: 20px 40px;
   grid-column: 2 / 3;
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr;
   gap: 10px 0;
   align-items: center;
+
+  white-space: nowrap;
 }
 
 header .search-bar-container input {
   font-size: 1.1rem;
-  background: #ddd;
+  background: var(--bg-color);
+  min-width: 200px;
   width: 90%;
   height: 2.5rem;
   padding: 0 20px;
-  border: 2px solid rgb(99, 7, 100);
+  border: 2px solid var(--primary-color-light);
   border-radius: 2rem;
   box-shadow: inset 3px 3px 5px rgba(17, 17, 17, 0.4);
 }
@@ -264,7 +280,7 @@ header .user-info .fa-bell:active {
 .fa-bell::after {
   content: "7";
   font-size: 0.7rem;
-  color: whitesmoke;
+  color: var(--secondary-color);
   background: red;
   padding: 4px 5px;
   border: none;
@@ -328,14 +344,14 @@ header .function-buttons button {
   font-size: 0.8rem;
   font-weight: bolder;
   text-align: center;
-  color: whitesmoke;
+  color: var(--secondary-color);
   background: linear-gradient(
     to right bottom,
-    rgb(46, 16, 101),
+    var(--primary-color),
     rgba(46, 16, 101, 0.2),
-    rgb(46, 16, 101)
+    var(--primary-color)
   );
-  padding: 5px 40px;
+  padding: 5px 20px 5px 25px;
   border: none;
   border-radius: 20px;
   box-shadow: 5px 5px 10px rgba(17, 17, 17, 0.3);
@@ -347,15 +363,15 @@ header .function-buttons button {
 
 header .function-buttons button:hover {
   scale: 1.05;
-  color: rgb(46, 16, 101);
-  background: whitesmoke;
+  color: var(--primary-color);
+  background: var(--secondary-color);
   box-shadow: 8px 8px 15px rgba(17, 17, 17, 0.6);
 }
 
 header .function-buttons button:active {
   scale: 1;
-  color: whitesmoke;
-  background: rgb(46, 16, 101);
+  color: var(--secondary-color);
+  background: var(--primary-color);
   box-shadow: none;
 }
 
@@ -378,7 +394,7 @@ header .function-buttons .share-project i {
 
   position: absolute;
   top: 5%;
-  left: 0;
+  left: -4%;
 }
 
 header .function-buttons .share-project .fa-share-nodes {
@@ -390,9 +406,9 @@ nav {
 
   background: linear-gradient(
     to bottom,
-    rgba(46, 16, 101, 0) 0%,
-    rgba(46, 16, 101, 0) 20%,
-    rgb(99, 7, 100) 100%
+    var(--primary-color-contrast) 0%,
+    var(--primary-color-contrast) 20%,
+    var(--primary-color-light) 100%
   );
   padding: clamp(10px, 1vw, 20px);
   display: grid;
@@ -408,7 +424,7 @@ nav .logo {
 nav .logo img {
   width: 80%;
   height: auto;
-  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 1));
+  filter: drop-shadow(10px 10px 10px rgb(0, 0, 0));
 }
 
 nav .logo h1 {
@@ -429,16 +445,17 @@ nav .logo:hover {
 }
 
 nav .logo:hover h1 {
-  color: rgb(99, 7, 100);
+  color: var(--primary-color-light);
 }
 
 ul {
-  font-size: clamp(1rem, 1vw, 1.5rem);
-  color: black;
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
+  color: #000;
   opacity: 0.9;
   list-style: none;
   display: grid;
   gap: 20px;
+  white-space: nowrap;
 }
 
 ul li {
@@ -463,8 +480,9 @@ ul li:active {
 
 .fa-message::after {
   content: "4";
-  font-size: 0.7rem;
-  color: whitesmoke;
+  /* font-size: 0.7rem; */
+  font-size: clamp(0.4rem, 0.5vw, 0.7rem);
+  color: var(--secondary-color);
   background: red;
   padding: 4px 5px;
   border: none;
@@ -493,11 +511,11 @@ main {
 }
 
 .project-card {
-  background: whitesmoke;
+  background: var(--secondary-color);
   height: 300px;
   padding: 20px 30px;
 
-  border: 2px solid rgb(46, 16, 101);
+  border: 2px solid var(--primary-color);
   border-radius: 1rem;
   box-shadow: 5px 5px 10px rgba(17, 17, 17, 0.3);
   transition-duration: 100ms;
@@ -527,7 +545,7 @@ main {
 
 .project-card .project-text .play-content i {
   font-size: 4rem;
-  color: whitesmoke;
+  color: var(--secondary-color);
   opacity: 0.6;
 }
 
@@ -555,12 +573,12 @@ main {
 .project-icons p {
   font-size: 0.8rem;
   text-align: center;
-  color: whitesmoke;
+  color: var(--secondary-color);
   background: linear-gradient(
     to right bottom,
-    rgb(46, 16, 101),
+    var(--primary-color),
     rgba(46, 16, 101, 0.75),
-    rgb(46, 16, 101)
+    var(--primary-color)
   );
   padding: 5px 15px;
   min-width: 60px;
@@ -572,9 +590,9 @@ main {
 
 .announcement-container,
 .trending-container {
-  background: whitesmoke;
+  background: var(--secondary-color);
   padding: 20px 30px;
-  border: 2px solid rgb(46, 16, 101);
+  border: 2px solid var(--primary-color);
   border-radius: 1rem;
   box-shadow: 5px 5px 10px rgba(17, 17, 17, 0.3);
 
@@ -625,11 +643,11 @@ main {
 footer {
   background: linear-gradient(
     to right,
-    rgb(99, 7, 100) 0%,
-    rgb(99, 7, 100) 20%,
-    rgba(46, 16, 101, 0)
+    var(--primary-color-light) 0%,
+    var(--primary-color-light) 20%,
+    var(--primary-color-contrast)
   );
-  color: whitesmoke;
+  color: var(--secondary-color);
   font-size: 0.9rem;
   text-align: center;
 
@@ -639,6 +657,6 @@ footer {
 }
 
 footer a:hover {
-  color: rgb(46, 16, 101);
+  color: var(--primary-color);
   text-decoration: underline;
 }
